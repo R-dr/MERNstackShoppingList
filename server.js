@@ -11,7 +11,7 @@ const app = express();
 app.use(bodyParser.json());
 
 //Db Config
-const db = require("./config/keys").mongoURI;
+const db = require("./config/keys").mongoURI ;
 
 //connect to mongo
 
