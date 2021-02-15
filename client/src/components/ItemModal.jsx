@@ -12,7 +12,7 @@ import {
 
 import { connect } from "react-redux";
 import { addItem } from "../actions/itemActions";
-import uuid from 'uuid'
+//import uuid from 'uuid'
 
 class ItemModal extends Component {
   state = {
@@ -30,7 +30,7 @@ class ItemModal extends Component {
   onSubmit = (e) => {
     e.preventDefault()
     const newItem= {
-      id:uuid(),
+      //id:uuid(), this was needed before connecting to the database so we had an id, now with mongo it makes it's own id
       name:this.state.name
     }
     // add item via addItem action in redux
