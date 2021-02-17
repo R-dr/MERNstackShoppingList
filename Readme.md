@@ -1,6 +1,8 @@
+App deployed [here](https://mighty-sierra-55673.herokuapp.com/)
+
 ## Purpose
   Since finishing my course with coder academy i noticed that my React skills could use a bit of work and as such i decided to explore the subject further.
-  this application has been made so far by following a tutorial by Brad travesty owner of the youtube channel Travesty Media
+  this application has been made so far by following [this tutorial](https://www.youtube.com/watch?v=PBTYxXADG_k&list=PLillGF-RfqbbiTGgA77tGO426V3hRF9iE&ab_channel=TraversyMedia) by Brad travesty owner of the youtube channel Travesty Media
 ### Intended outcome
 - sharpen my React skills by firstly following the tutorial and learning more about how to manipulate and use the React frame work
 - gain new skills regarding the MERN stack in both deployment of a MERN stack application
