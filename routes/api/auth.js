@@ -56,7 +56,7 @@ router.post("/", (req, res) => {
 // @access Private
 router.get('/user',auth,(req,res)=>{
   User.findById(req.user.id)
-  //rerturns the user that signs in minus the password
+  //returns the user that signs in minus the password
   .select('-password')
   .then(user=> res.json(user))
 })
