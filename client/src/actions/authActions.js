@@ -53,21 +53,50 @@ export const register = ({ name, email, password }) => (dispatch) => {
       })
     )
     .catch((e) => {
-      dispatch(returnErrors(e.response.data, e.response.status,'REGISTER_FAIL'));
+      dispatch(
+        returnErrors(e.response.data, e.response.status, "REGISTER_FAIL")
+      );
 
       dispatch({
         type: REGISTER_FAIL,
       });
     });
 };
+//Login user
+export const login = ({email, password }) => (dispatch) => {
+  // Headers
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
 
-// Logout User
-export const logout = ()=>{
-  return{
-    type:LOGOUT_SUCCESS
+  // Request body
+  const body = JSON.stringify({email, password });
+  axios
+    .post("/api/auth", body, config)
+    .then((res) =>
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: res.data,
+      })
+    )
+    .catch((e) => {
+      dispatch(
+        returnErrors(e.response.data, e.response.status, "LOGIN_FAIL")
+      );
+
+      dispatch({
+        type: LOGIN_FAIL,
+      });
+    });
   }
-
-}
+// Logout User
+export const logout = () => {
+  return {
+    type: LOGOUT_SUCCESS,
+  };
+};
 
 // token helper function
 export const tokenConfig = (getState) => {

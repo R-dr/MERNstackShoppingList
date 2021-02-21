@@ -11,8 +11,7 @@ const User = require("../../models/User");
 // @access Public
 router.post("/", (req, res) => {
   const { email, password } = req.body;
-
-  //validations herer if any items are missing you send back the error that says you need to enter al fields
+  //validations here if any items are missing you send back the error that says you need to enter al fields
   if (!email || !password) {
     return res.status(400).json({ msg: "Please enter all fields" });
   }

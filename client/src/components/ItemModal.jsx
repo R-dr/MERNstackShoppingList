@@ -9,7 +9,7 @@ import {
   Label,
   Input,
 } from "reactstrap";
-
+import PropTypes from 'prop-types'
 import { connect } from "react-redux";
 import { addItem } from "../actions/itemActions";
 //import uuid from 'uuid'
@@ -19,6 +19,10 @@ class ItemModal extends Component {
     modal: false,
     name: "",
   };
+static propTypes ={
+  isAuthenticated:PropTypes.bool
+}
+
   toggle = () => {
     this.setState({
       modal: !this.state.modal,
@@ -41,13 +45,14 @@ class ItemModal extends Component {
   render() {
     return (
       <div>
-        <Button
+        {this.props.isAuthenticated ? <Button
           color="dark"
           style={{ marginBottom: "2rem" }}
           onClick={this.toggle}
         >
           Add Item
-        </Button>
+        </Button> : <h4>Please log in to manage items</h4>}
+        
 
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>Add to List</ModalHeader>
@@ -77,6 +82,7 @@ class ItemModal extends Component {
 }
 const mapStateToProps = (state) => ({
   item: state.item,
+  isAuthenticated:state.auth.isAuthenticated
 });
 //remember when using connect this is the way to export so the redux is used
 export default connect(mapStateToProps, {addItem})(ItemModal);
