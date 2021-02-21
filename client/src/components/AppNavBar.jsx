@@ -67,7 +67,7 @@ class AppNavBar extends Component {
                 
                 {isAuthenticated ? authLinks : guestLinks}
                 <NavItem>
-                  <NavLink href="https://github.com/r-dr">Github</NavLink>
+                  <NavLink href="https://github.com/R-dr/MERNstackShoppingList">Github repo</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
